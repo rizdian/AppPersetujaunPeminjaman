@@ -1,4 +1,4 @@
-package com.ancient.riz.persetujuanpeminjaman.util.model;
+package com.ancient.riz.persetujuanpeminjaman.model;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -16,7 +16,7 @@ public class PeminjamanModel {
     private Date tglKembali;
 
     @SerializedName("keterangan")
-    private Date keterangan;
+    private String keterangan;
 
     @SerializedName("no_polisi")
     private String noPol;
@@ -54,11 +54,11 @@ public class PeminjamanModel {
         this.tglKembali = tglKembali;
     }
 
-    public Date getKeterangan() {
+    public String getKeterangan() {
         return keterangan;
     }
 
-    public void setKeterangan(Date keterangan) {
+    public void setKeterangan(String keterangan) {
         this.keterangan = keterangan;
     }
 

@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#4A9586"
     android:orientation="vertical"
     android:scrollbarAlwaysDrawVerticalTrack="true"
-    tools:context=".util.activity.LoginActivity">
+    tools:context=".activity.LoginActivity">
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -36,7 +35,7 @@
                     android:id="@+id/identity"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:hint="User Name"
+                    android:hint="@string/username"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
@@ -49,8 +48,8 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    android:hint="Password"
-                    android:inputType="numberPassword" />
+                    android:hint="@string/password"
+                    android:inputType="textPassword" />
             </android.support.design.widget.TextInputLayout>
 
 
@@ -60,7 +59,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="22dp"
                 android:background="#d67601"
-                android:text="Sign in"
+                android:text="@string/sign_in"
                 android:textAllCaps="false"
                 android:textColor="#fff"
                 android:textSize="18sp" />
@@ -76,7 +75,8 @@
         android:layout_marginTop="16dp"
         android:background="@drawable/background_profile"
         android:elevation="4dp"
-        android:src="@mipmap/user_icon" />
+        android:src="@mipmap/user_icon"
+        android:contentDescription="@string/user_foto"/>
 
     <TextView
         android:id="@+id/login_title"
@@ -84,7 +84,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="26dp"
         android:gravity="center_horizontal"
-        android:text="Login "
+        android:text="@string/login"
         android:textColor="#fff"
         android:textSize="26sp"
         android:textStyle="bold"

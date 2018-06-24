@@ -1,8 +1,10 @@
-package com.ancient.riz.persetujuanpeminjaman.util.util.api;
+package com.ancient.riz.persetujuanpeminjaman.util.api;
+
+import com.ancient.riz.persetujuanpeminjaman.model.Token;
 
 public class UtilsApi {
 
-    public static final String BASE_URL_API = "http://192.168.43.191/p3/api/";
+    private static final String BASE_URL_API = "http://192.168.1.105/p3/api/";
 
     // Mendeklarasikan Interface BaseApiService
     public static BaseApiService getAPIService(){

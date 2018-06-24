@@ -1,4 +1,4 @@
-package com.ancient.riz.persetujuanpeminjaman.util.util;
+package com.ancient.riz.persetujuanpeminjaman.util;
 
 import android.content.Context;
 import android.content.SharedPreferences;
@@ -37,7 +37,7 @@ public class SharedPrefManager {
         return sp.getString(SP_NAMA, "");
     }
 
-    public String getSPEmail(){
+    public String getSPToken(){
         return sp.getString(SP_TOKEN, "");
     }
 }
