@@ -1,6 +1,7 @@
 package com.ancient.riz.persetujuanpeminjaman.util.api;
 
 import com.ancient.riz.persetujuanpeminjaman.model.AllPeminjamanModel;
+import com.ancient.riz.persetujuanpeminjaman.model.BaseModel;
 
 import okhttp3.ResponseBody;
 import retrofit2.Call;
@@ -22,4 +23,8 @@ public interface BaseApiService {
 
     @GET("v1/peminjaman")
     Call<AllPeminjamanModel> getListPeminjaman(@Header("authorization") String auth);
+
+    @FormUrlEncoded
+    @POST("v1/peminjaman/acc")
+    Call<BaseModel> getApproval(@Header("authorization") String auth, @Field("id") Integer id);
 }

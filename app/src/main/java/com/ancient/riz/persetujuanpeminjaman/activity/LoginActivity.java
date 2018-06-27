@@ -77,6 +77,14 @@ public class LoginActivity extends AppCompatActivity {
                             } catch (JSONException | IOException e) {
                                 e.printStackTrace();
                             }
+                        }else {
+                            try {
+                                JSONObject jObjError = new JSONObject(response.errorBody().string());
+                                String error_message = jObjError.getString("message");
+                                Toast.makeText(mContext, error_message, Toast.LENGTH_SHORT).show();
+                            } catch (JSONException | IOException e) {
+                                e.printStackTrace();
+                            }
                         }
                     }
 
