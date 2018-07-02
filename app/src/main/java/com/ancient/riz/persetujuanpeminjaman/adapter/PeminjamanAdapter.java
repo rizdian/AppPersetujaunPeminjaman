@@ -95,7 +95,7 @@ public class PeminjamanAdapter extends RecyclerView.Adapter<PeminjamanAdapter.Pe
         String firstCharNama = nama.substring(0, 1);
         TextDrawable drawable = TextDrawable.builder()
                 .buildRound(firstCharNama, getColor());
-        holder.ivTextDrawable.setImageDrawable(drawable);
+        holder.ivLogoPeminjaman.setImageDrawable(drawable);
 
         // Set onclicklistener pada view cvMain (CardView)
         holder.tvOption.setOnClickListener(new View.OnClickListener() {
@@ -113,6 +113,7 @@ public class PeminjamanAdapter extends RecyclerView.Adapter<PeminjamanAdapter.Pe
                         switch (item.getItemId()) {
                             case R.id.menu1:
                                 intent = new Intent(mContext, HistoryActivity.class);
+                                intent.putExtra("id", listPeminjamanModel.getId());
                                 mContext.startActivity(intent);
                                 break;
                             case R.id.menu2:
@@ -159,8 +160,8 @@ public class PeminjamanAdapter extends RecyclerView.Adapter<PeminjamanAdapter.Pe
 
     public class PeminjamanHolder extends RecyclerView.ViewHolder {
 
-        @BindView(R.id.ivTextDrawable)
-        ImageView ivTextDrawable;
+        @BindView(R.id.ivLogoPeminjaman)
+        ImageView ivLogoPeminjaman;
         @BindView(R.id.tvNmPeminjam)
         TextView tvNmPeminjam;
         @BindView(R.id.tvId)

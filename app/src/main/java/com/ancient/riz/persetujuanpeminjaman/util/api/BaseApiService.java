@@ -1,5 +1,6 @@
 package com.ancient.riz.persetujuanpeminjaman.util.api;
 
+import com.ancient.riz.persetujuanpeminjaman.model.AllHistoryModel;
 import com.ancient.riz.persetujuanpeminjaman.model.AllPeminjamanModel;
 import com.ancient.riz.persetujuanpeminjaman.model.BaseModel;
 
@@ -27,4 +28,8 @@ public interface BaseApiService {
     @FormUrlEncoded
     @POST("v1/peminjaman/acc")
     Call<BaseModel> getApproval(@Header("authorization") String auth, @Field("id") Integer id);
+
+    @FormUrlEncoded
+    @POST("v1/peminjaman/detail")
+    Call<AllHistoryModel> getListDetailApproval(@Header("authorization") String auth, @Field("id") Integer id);
 }
