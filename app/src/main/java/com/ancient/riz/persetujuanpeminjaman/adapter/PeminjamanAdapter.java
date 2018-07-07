@@ -21,6 +21,7 @@ import com.amulyakhare.textdrawable.TextDrawable;
 import com.ancient.riz.persetujuanpeminjaman.R;
 import com.ancient.riz.persetujuanpeminjaman.activity.HistoryActivity;
 import com.ancient.riz.persetujuanpeminjaman.activity.MainActivity;
+import com.ancient.riz.persetujuanpeminjaman.activity.RejectActivity;
 import com.ancient.riz.persetujuanpeminjaman.model.BaseModel;
 import com.ancient.riz.persetujuanpeminjaman.model.PeminjamanModel;
 import com.ancient.riz.persetujuanpeminjaman.util.SharedPrefManager;
@@ -140,7 +141,9 @@ public class PeminjamanAdapter extends RecyclerView.Adapter<PeminjamanAdapter.Pe
                                 dialog.show();
                                 break;
                             case R.id.menu3:
-                                Snackbar.make(view, "Clicked element 3" + namaPeminjam, Snackbar.LENGTH_LONG).show();
+                                intent = new Intent(mContext, RejectActivity.class);
+                                intent.putExtra("id", listPeminjamanModel.getId());
+                                mContext.startActivity(intent);
                                 break;
                         }
                         return false;

@@ -10,4 +10,6 @@
     <string name="histori_persetujuan">Histori Persetujuan</string>
     <string name="setuju">Setuju</string>
     <string name="tolak">Tolak</string>
+    <string name="reason">Alasan Penolakan</string>
+    <string name="proses">Proses</string>
 </resources>

@@ -31,6 +31,12 @@ public interface BaseApiService {
                                 @Field("id") Integer id);
 
     @FormUrlEncoded
+    @POST("v1/peminjaman/reject")
+    Call<BaseModel> getReject(@Header("authorization") String auth,
+                              @Field("id") Integer id,
+                              @Field("reason") String reason);
+
+    @FormUrlEncoded
     @POST("v1/peminjaman/detail")
     Call<AllHistoryModel> getListDetailApproval(@Header("authorization") String auth,
                                                 @Field("id") Integer id);
