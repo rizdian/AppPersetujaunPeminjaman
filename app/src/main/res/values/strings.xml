@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Persetujuan Peminjaman</string>
+
+    <string name="username">User Name</string>
+    <string name="password">Password</string>
+    <string name="sign_in">Sign in</string>
+    <string name="login">Login</string>
+    <string name="logo_kiri">Logo Kiri</string>
+    <string name="user_foto">user foto</string>
+    <string name="histori_persetujuan">Histori Persetujuan</string>
+    <string name="setuju">Setuju</string>
+    <string name="tolak">Tolak</string>
+    <string name="reason">Alasan Penolakan</string>
+    <string name="proses">Proses</string>
+</resources>

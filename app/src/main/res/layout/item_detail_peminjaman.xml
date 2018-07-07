@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_marginBottom="6dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/card_view_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/ivLogoDetail"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:contentDescription="@string/logo_kiri"/>
+
+            <LinearLayout
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:orientation="vertical"
+                android:paddingEnd="8dp">
+
+                <TextView
+                    android:id="@+id/tvStatus"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/tvDivisi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvTingkatan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvNamaApproval"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tvOnUpdate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="sans-serif-light"
+                    android:textSize="12sp" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v7.widget.CardView>
+</LinearLayout>
