@@ -60,7 +60,7 @@ public class HistoryActivity extends AppCompatActivity implements SwipeRefreshLa
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-                getResultListPeminjaman();
+                getHistoryPeminjaman();
             }
         });
         // Configure the refreshing colors
@@ -69,10 +69,10 @@ public class HistoryActivity extends AppCompatActivity implements SwipeRefreshLa
                 android.R.color.holo_orange_light,
                 android.R.color.holo_red_light);
 
-        getResultListPeminjaman();
+        getHistoryPeminjaman();
     }
 
-    public void getResultListPeminjaman() {
+    public void getHistoryPeminjaman() {
         mApiService.getListDetailApproval(sharedPrefManager.getSPToken(),this.id).enqueue(new Callback<AllHistoryModel>() {
             @Override
             public void onResponse(@NonNull Call<AllHistoryModel> call, @NonNull Response<AllHistoryModel> response) {
@@ -100,6 +100,6 @@ public class HistoryActivity extends AppCompatActivity implements SwipeRefreshLa
 
     @Override
     public void onRefresh() {
-        getResultListPeminjaman();
+        getHistoryPeminjaman();
     }
 }

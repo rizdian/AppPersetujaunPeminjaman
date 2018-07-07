@@ -60,16 +60,18 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryD
     @Override
     public void onBindViewHolder(@NonNull final HistoryDetailHolder holder, final int position) {
         final HistoryModel historyModel = historyModelList.get(position);
-        SimpleDateFormat spf = new SimpleDateFormat("dd MMM yyyy", Locale.ENGLISH);
+        String status = "--";
 
-        final String status = ((historyModel.getStatus().equals(1))? "Di Setujui" : (historyModel.getStatus().equals(0) ?"Di Tolak" : "--"));
+        if (historyModel.getStatus() != null){
+            status = ((historyModel.getStatus().equals(1))? "Di Setujui" : (historyModel.getStatus().equals(0) ?"Di Tolak" : "--"));
+        }
         final String namaApproval = historyModel.getNmDepanApp() + " " + historyModel.getNmBelakangApp();
 
         holder.tvStatus.setText(status);
         holder.tvDivisi.setText(historyModel.getDivisi());
         holder.tvTingkatan.setText("Level-"+historyModel.getTingkatan());
         holder.tvNamaApproval.setText(namaApproval);
-        holder.tvOnUpdate.setText(spf.format(historyModel.getOnUpdate()));
+        holder.tvOnUpdate.setText(historyModel.getOnUpdate());
 
         String nama = historyModel.getDivisi();
         String firstCharNama = nama.substring(0, 1);
@@ -100,7 +102,6 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryD
 
         private HistoryDetailHolder(View itemView) {
             super(itemView);
-
             ButterKnife.bind(this, itemView);
         }
     }

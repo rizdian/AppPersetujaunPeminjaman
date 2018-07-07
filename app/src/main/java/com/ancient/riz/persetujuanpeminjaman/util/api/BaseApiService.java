@@ -27,9 +27,11 @@ public interface BaseApiService {
 
     @FormUrlEncoded
     @POST("v1/peminjaman/acc")
-    Call<BaseModel> getApproval(@Header("authorization") String auth, @Field("id") Integer id);
+    Call<BaseModel> getApproval(@Header("authorization") String auth,
+                                @Field("id") Integer id);
 
     @FormUrlEncoded
     @POST("v1/peminjaman/detail")
-    Call<AllHistoryModel> getListDetailApproval(@Header("authorization") String auth, @Field("id") Integer id);
+    Call<AllHistoryModel> getListDetailApproval(@Header("authorization") String auth,
+                                                @Field("id") Integer id);
 }

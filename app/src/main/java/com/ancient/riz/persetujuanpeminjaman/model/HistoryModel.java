@@ -2,7 +2,10 @@ package com.ancient.riz.persetujuanpeminjaman.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Objects;
 
 public class HistoryModel {
 
@@ -22,7 +25,7 @@ public class HistoryModel {
     private Integer idKaryawan;
 
     @SerializedName("on_update")
-    private Date onUpdate;
+    private String onUpdate;
 
     @SerializedName("nama")
     private String divisi;
@@ -73,11 +76,13 @@ public class HistoryModel {
         this.idKaryawan = idKaryawan;
     }
 
-    public Date getOnUpdate() {
-        return onUpdate;
+    public String getOnUpdate() {
+        DateFormat dateFormat = new SimpleDateFormat("dd MMM yyyy HH:mm:ss");
+        Date date = new Date();
+        return dateFormat.format(date);
     }
 
-    public void setOnUpdate(Date onUpdate) {
+    public void setOnUpdate(String onUpdate) {
         this.onUpdate = onUpdate;
     }
 
@@ -103,6 +108,43 @@ public class HistoryModel {
 
     public void setNmBelakangApp(String nmBelakangApp) {
         NmBelakangApp = nmBelakangApp;
+    }
+
+    @Override
+    public String toString() {
+        return "HistoryModel{" +
+                "id=" + id +
+                ", idPeminjam=" + idPeminjam +
+                ", status='" + status + '\'' +
+                ", tingkatan=" + tingkatan +
+                ", idKaryawan=" + idKaryawan +
+                ", onUpdate=" + onUpdate +
+                ", divisi='" + divisi + '\'' +
+                ", NmDepanApp='" + NmDepanApp + '\'' +
+                ", NmBelakangApp='" + NmBelakangApp + '\'' +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof HistoryModel)) return false;
+        HistoryModel that = (HistoryModel) o;
+        return Objects.equals(getId(), that.getId()) &&
+                Objects.equals(getIdPeminjam(), that.getIdPeminjam()) &&
+                Objects.equals(getStatus(), that.getStatus()) &&
+                Objects.equals(getTingkatan(), that.getTingkatan()) &&
+                Objects.equals(getIdKaryawan(), that.getIdKaryawan()) &&
+                Objects.equals(getOnUpdate(), that.getOnUpdate()) &&
+                Objects.equals(getDivisi(), that.getDivisi()) &&
+                Objects.equals(getNmDepanApp(), that.getNmDepanApp()) &&
+                Objects.equals(getNmBelakangApp(), that.getNmBelakangApp());
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(getId(), getIdPeminjam(), getStatus(), getTingkatan(), getIdKaryawan(), getOnUpdate(), getDivisi(), getNmDepanApp(), getNmBelakangApp());
     }
 }
 
