@@ -88,7 +88,7 @@ public class PeminjamanAdapter extends RecyclerView.Adapter<PeminjamanAdapter.Pe
 
         holder.tvNmPeminjam.setText(namaPeminjam);
         holder.tvTglPinjam.setText(spf.format(listPeminjamanModel.getTglPinjam()));
-        holder.tvTglKembali.setText(spf.format(listPeminjamanModel.getTglPinjam()));
+        holder.tvTglKembali.setText(spf.format(listPeminjamanModel.getTglKembali()));
         holder.tvNamaMobil.setText(listPeminjamanModel.getNmMobil());
         holder.tvId.setText(String.valueOf(listPeminjamanModel.getId()));
 

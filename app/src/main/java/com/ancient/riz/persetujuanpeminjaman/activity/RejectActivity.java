@@ -61,6 +61,8 @@ public class RejectActivity extends AppCompatActivity {
 
         if(etReason.getText().toString().length()==0){
             etReason.setError("Harap Masukan Alasan");
+        }else if(etReason.getText().toString().length()>250){
+            etReason.setError("Alasan Lebih Dari 250 Karakter");
         }else{
             mApiService.getReject(sharedPrefManager.getSPToken(),this.id,etReason.getText().toString())
                     .enqueue(new Callback<BaseModel>() {

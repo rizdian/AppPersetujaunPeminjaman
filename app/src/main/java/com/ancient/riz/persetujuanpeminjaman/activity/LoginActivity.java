@@ -29,8 +29,10 @@ import retrofit2.Response;
 
 public class LoginActivity extends AppCompatActivity {
 
-    @BindView(R.id.identity) EditText etIdentity;
-    @BindView(R.id.password) EditText etPassword;
+    @BindView(R.id.identity)
+    EditText etIdentity;
+    @BindView(R.id.password)
+    EditText etPassword;
 
     Context mContext;
     BaseApiService mApiService;
@@ -49,24 +51,23 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     @OnClick(R.id.btnLogin)
-    public void requestLogin(){
-        if(etIdentity.getText().toString().length()==0){
+    public void requestLogin() {
+        if (etIdentity.getText().toString().length() == 0) {
             etIdentity.setError("Harap Masukan User Name");
         }
         //Mengecek Form Alamat
-        else if(etPassword.getText().toString().length()==0){
+        else if (etPassword.getText().toString().length() == 0) {
             etPassword.setError("Harap Masukan Password");
-        }
-        else{
+        } else {
             mApiService.loginRequest(etIdentity.getText().toString(), etPassword.getText().toString())
                     .enqueue(new Callback<ResponseBody>() {
                         @Override
                         public void onResponse(@NonNull Call<ResponseBody> call, @NonNull Response<ResponseBody> response) {
-                            if (response.isSuccessful()){
+                            if (response.isSuccessful()) {
                                 try {
                                     assert response.body() != null;
                                     JSONObject jsonRESULTS = new JSONObject(response.body().string());
-                                    if (jsonRESULTS.getString("token") != null){
+                                    if (jsonRESULTS.getString("token") != null) {
                                         // Jika login berhasil maka data nama yang ada di response API
                                         // akan diparsing ke activity selanjutnya.
                                         Toast.makeText(mContext, "BERHASIL LOGIN", Toast.LENGTH_SHORT).show();
@@ -85,7 +86,7 @@ public class LoginActivity extends AppCompatActivity {
                                 } catch (JSONException | IOException e) {
                                     e.printStackTrace();
                                 }
-                            }else {
+                            } else {
                                 try {
                                     JSONObject jObjError = new JSONObject(response.errorBody().string());
                                     String error_message = jObjError.getString("message");

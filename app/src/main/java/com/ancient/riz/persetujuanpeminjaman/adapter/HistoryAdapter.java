@@ -65,7 +65,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryD
         if (historyModel.getStatus() != null){
             status = ((historyModel.getStatus().equals(1))? "Di Setujui" : (historyModel.getStatus().equals(0) ?"Di Tolak" : "--"));
         }
-        final String namaApproval = historyModel.getNmDepanApp() + " " + historyModel.getNmBelakangApp();
+        final String namaApproval = ((historyModel.getNmDepanApp() == null) ? "--" : historyModel.getNmDepanApp()) +
+                " " + ((historyModel.getNmBelakangApp() == null) ? "--" : historyModel.getNmBelakangApp() );
 
         holder.tvStatus.setText(status);
         holder.tvDivisi.setText(historyModel.getDivisi());
